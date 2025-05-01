@@ -13,6 +13,11 @@ Comparing the router’s performance against:
 •	TWAP: Time-weighted average price calculated per minute
 •	VWAP: Volume-weighted averaging executed price based on displayed volume
 ________________________________________
+# Files
+- backtest.py – main execution script
+- results.json – final structured output
+- Readme.md - Clear explanation of the work
+________________________________________
 # Approach
 The goal was to implement the allocator as pseudocode provided to us with Level-1 snapshots data from l1_day.csv. Per timestamp:
 •	Generation of feasible order splits
@@ -22,6 +27,29 @@ Any non-filled quantity rolls forward from the last snapshot till the entire 500
 ________________________________________
 # Grid Search Calibration
 The router executes an exhaustive search for the following set of parameters:
-| Parameter | Values | | lambda_over | 0.01, 0.05 | | theta_queue | 0.0, 0.001 |
+| Parameter         | Values        |
+|------------------|---------------|
+| `lambda_under`    | 0.01, 0.05     |
+| `lambda_over`     | 0.01, 0.05     |
+| `theta_queue`     | 0.0, 0.001     |
 Parameter combination yielding the lowest total cost is selected as optimal.
+________________________________________
+# Output
+The script now produces:
+• A results.json which contains the most effective parameters, total cash expended, average prices, and BPS savings compared to other baselines for each.
+• Every baseline and strategy uses the same 9-minute segment of market data.
+________________________________________
+# Future Enhancements
+To go further than just static cost, one improvement includes integrating queue position modeling or slippage:
 
+Thought: Monitor the expected queue position per venue and probabilistically model fills based on order stage and flow. This incorporates the deeper the queue you are the less likely it is you will be executed, most notably in thin markets or quick moving markets.
+________________________________________
+# Performance
+-Meets the benchmark of beating the **best-ask strategy** by multiple basis points
+-A script that runs in under two minutes on a laptop and beats the best-ask baseline.
+________________________________________
+# Requirements
+-Python 3.8 or later
+-Standard packages such as pandas & numpy
+
+---
