@@ -37,8 +37,8 @@ The router executes an exhaustive search for the following set of parameters:
 ________________________________________
 # Output
 The script now produces:
-• A results.json which contains the most effective parameters, total cash expended, average prices, and BPS savings compared to other baselines for each.
-• Every baseline and strategy uses the same 9-minute segment of market data.
+- A results.json which contains the most effective parameters, total cash expended, average prices, and BPS savings compared to other baselines for each.
+- Every baseline and strategy uses the same 9-minute segment of market data.
 ________________________________________
 # Future Enhancements
 To go further than just static cost, one improvement includes integrating queue position modeling or slippage:
