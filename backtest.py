@@ -12,7 +12,7 @@ PARAM_GRID = {
     "lambda_over": [0.01, 0.05],
     "theta_queue": [0.0, 0.001]
 }
-DATA_PATH = "D:\SIVA\Blockhouse\l1_day.csv"
+DATA_PATH = "\l1_day.csv"
 
 def load_snapshots(path):
     df = pd.read_csv(path)
