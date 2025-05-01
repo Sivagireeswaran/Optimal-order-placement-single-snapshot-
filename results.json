@@ -1,0 +1,26 @@
+{
+  "best_parameters": {
+    "lambda_under": 0.01,
+    "lambda_over": 0.01,
+    "theta_queue": 0.0
+  },
+  "smart_router": {
+    "total_cash": 1113710.0,
+    "avg_price": 222.742
+  },
+  "best_ask": {
+    "total_cash": 1114112.28,
+    "avg_price": 222.8225,
+    "savings_bps": 80.46
+  },
+  "twap": {
+    "total_cash": 1115207.69,
+    "avg_price": 223.0415,
+    "savings_bps": 299.54
+  },
+  "vwap": {
+    "total_cash": 1114112.28,
+    "avg_price": 222.8225,
+    "savings_bps": 80.46
+  }
+}
